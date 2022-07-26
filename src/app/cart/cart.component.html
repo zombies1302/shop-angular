@@ -1,0 +1,168 @@
+<div class="container text-center">
+	<img routerLink="/" src="https://f48-zpg-r.zdn.vn/9026594281339455888/25c26e0a6b70a92ef061.jpg" width="20%" height="30%" alt="">
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark  bg-danger sticky-top">
+	<!-- Container wrapper -->
+	<div class="container-fluid">
+		<!-- Toggle button -->
+		<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+			<i class="fas fa-bars"></i>
+		</button>
+
+		<!-- Collapsible wrapper -->
+		<div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+			<!-- Left links -->
+			<ul class="navbar-nav mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link " routerLink="/" aria-current="page" href="#"><i class="fas fa-home"></i> Trang Chủ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"><i class="fas fa-bars"></i> Sản Phẩm</a>
+				</li>
+
+				<!-- Navbar dropdown -->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"varia-expanded="false"><i class="fas fa-list"></i> Loại Sản Phẩm</a>
+					<!-- Dropdown menu -->
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+						<li *ngFor="let loai of listLoai">
+							<a class="dropdown-item" href="#">{{loai.tenLoai}}</a>
+						</li>
+
+					</ul>
+
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"><i class="fas fa-phone"></i> Liên Hệ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/admin/"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</a>
+				</li>
+				<!-- cart -->
+				<li class="nav-item">
+					<a class="nav-link active" href="#" routerLink="/cart" id="cart" >
+						<span><i class="fas fa-shopping-cart"></i> 
+							<span class="badge rounded-pill badge-notification bg-info"></span>  Giỏ Hàng</span>
+						</a>
+						<!-- cart -->
+					</ul>
+					<!-- Left links -->
+				</div>
+				<!-- Collapsible wrapper -->
+			</div>
+			<!-- Container wrapper -->
+		</nav>
+		<div class="container pt-2">
+			<h1 class="text-center mt-2">Giỏ hàng</h1>
+			<div class="row">
+				<div class="col-7">
+					<div class="shadow p-2">
+						<h5>Giỏ hàng</h5>
+
+						<div class="row pt-4">
+							<div class="col-2">
+								Hình Ảnh
+							</div>
+							<div class="col-4">
+								Tên Sản Phẩm
+							</div>
+							<div class="col-2">
+								Số Lượng
+							</div>
+							<div class="col-2">
+								Đơn Giá
+							</div>
+							<div class="col-2">
+								Thành Tiền
+							</div>
+						</div>
+
+						<div class="row pt-4">
+							<div class="col-2">
+								<img src="https://sweetiehouse.vn/wp-content/uploads/2020/08/27c6c506b207a1fdee0f61a4d8a0eb38.jpg" alt="" width="100">
+							</div>
+							<div class="col-4">Khô gà</div>
+							<div class="col-2">2</div>
+							<div class="col-2">200.000</div>
+							<div class="col-2">200.000</div>
+						</div>
+						<div class="row pt-4">
+							<div class="col-2">
+								<img src="https://sweetiehouse.vn/wp-content/uploads/2020/08/27c6c506b207a1fdee0f61a4d8a0eb38.jpg" alt="" width="100">
+							</div>
+							<div class="col-4">Khô gà</div>
+							<div class="col-2">2</div>
+							<div class="col-2">200.000</div>
+							<div class="col-2">200.000</div>
+						</div>
+						<div class="row pt-4">
+							<div class="col-2">
+								<img src="https://sweetiehouse.vn/wp-content/uploads/2020/08/27c6c506b207a1fdee0f61a4d8a0eb38.jpg" alt="" width="100">
+							</div>
+							<div class="col-4">Khô gà</div>
+							<div class="col-2">2</div>
+							<div class="col-2">200.000</div>
+							<div class="col-2">200.000</div>
+						</div>
+
+
+
+
+
+					</div>
+				</div>
+				<div class="col-5">
+					<div class="shadow p-3">
+						<h5>Thông tin đơn hàng</h5>
+						<p class="p-3">Thành tiền sản phẩm: 
+							<span class="text-danger"><b>200.000 </b>vnđ </span>
+						</p>
+						<hr>
+						<div class="row">
+							<div class="col-3">
+								<p><b>Mã Giảm Giá</b></p>
+							</div>
+							<div class="col-6">
+								<div class="form-outline">
+									<input type="text" id="form12" class="form-control">
+									<label class="form-label" for="form12" style="margin-left: 0px;">Nhập mã giảm giá (nếu có)</label>
+									<div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 152px;"></div><div class="form-notch-trailing"></div></div></div>
+								</div>
+								<div class="col">
+									<button class="btn btn-info">Áp Dụng</button>
+								</div>
+							</div>
+							<hr>
+							<p class="p-3"><b>Tổng Tiền:</b>
+								<span class="text-danger"><b>400.000 </b>vnđ </span>
+							</p>
+
+							<div class="p-3 text-center">
+								Chúng tôi chấp nhận thanh toán <br>
+								<img src="https://pay.vnpay.vn/images/logo.png" alt="" width="60">
+								<img src="https://diemuudai.vn/wp-content/uploads/2017/11/the-napas.jpg" alt="" width="60">
+								<img src="https://hangdang.vn/wp-content/plugins/woocommerce/assets/images/icons/credit-cards/visa.svg" alt="" width="60">
+								<img src="https://cdn.freelogovectors.net/wp-content/uploads/2016/12/mastercard-logo2.png" alt="" width="60">
+
+
+
+							</div>
+							<div class="text-center">
+								<span class="text-danger">Vui Lòng Đăng Nhập Để Tiến Hành Thanh Toán</span>
+							</div>
+							<div class="text-center p-2 pt-4">						
+								<a href="../tai-khoan" class="btn btn-primary">Đăng Nhập</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<footer class="bg-danger text-center text-lg-start mt-3">
+					<!-- Copyright -->
+					<div class="text-center text-white p-3" >
+						© 2020 Copyright:
+						<a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+					</div>
+					<!-- Copyright -->
+				</footer>

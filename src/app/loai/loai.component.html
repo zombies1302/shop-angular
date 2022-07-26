@@ -1,0 +1,70 @@
+<div class="container">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<!--   <a class="navbar-brand px-4" href="/"><img src="https://statics.voz.tech/styles/next/xenforo/voz-logo_2x.png?v=3" height="40" alt=""></a> -->
+			<button class="navbar-toggler"type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fas fa-bars"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" routerLink="/admin/">Admin</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" routerLink="/admin/sanpham">Sản Phẩm</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" routerLink="/admin/loai">Loại Hàng</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled">Disabled</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<button class="btn btn-info mt-2 mx-3" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Thêm Loại Hàng</button>
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Thêm Loại Hàng</h5>
+					<button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<form #frmSP="ngForm" (ngSubmit)="loaiThem(frmSP.value)">
+
+					<div class="modal-body">
+						<label class="form-label" for="form12">Tên Loại Hàng</label>
+						<input name="tenLoai" ngModel type="text" id="form12" class="form-control" />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Đóng</button>
+						<button type="submit" class="btn btn-primary">Lưu</button>
+
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+	<h1>Quản lý loại hàng</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Tên Loại</th>
+				<th scope="col">Hành Động</th>
+			</tr>
+		</thead>
+		<tbody>
+				<tr *ngFor="let da of listLoai">
+					<th scope="row">{{da.id_loai}}</th>
+					<td>{{da.tenLoai}}</td>
+					<td><button class="btn btn-info"><i class="fas fa-edit"></i></button>
+						<button class="btn btn-danger">X</button></td>
+					</tr>
+				</tbody>
+			</table>
+
+
+		</div>
