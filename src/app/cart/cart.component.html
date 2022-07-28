@@ -17,7 +17,7 @@
 					<a class="nav-link " routerLink="/" aria-current="page" href="#"><i class="fas fa-home"></i> Trang Chủ</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#"><i class="fas fa-bars"></i> Sản Phẩm</a>
+					<a class="nav-link" routerLink="/sanpham" href="#"><i class="fas fa-bars"></i> Sản Phẩm</a>
 				</li>
 
 				<!-- Navbar dropdown -->
@@ -36,7 +36,7 @@
 					<a class="nav-link" href="#"><i class="fas fa-phone"></i> Liên Hệ</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" routerLink="/admin/"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</a>
+					<a class="nav-link" href="#" routerLink="/admin/"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</a>
 				</li>
 				<!-- cart -->
 				<li class="nav-item">
@@ -77,36 +77,15 @@
 							</div>
 						</div>
 
-						<div class="row pt-4">
+						<div *ngFor="let cart of listCart" class="row pt-4">
 							<div class="col-2">
-								<img src="https://sweetiehouse.vn/wp-content/uploads/2020/08/27c6c506b207a1fdee0f61a4d8a0eb38.jpg" alt="" width="100">
+								<img src="{{cart.images}}" alt="" width="100">
 							</div>
-							<div class="col-4">Khô gà</div>
-							<div class="col-2">2</div>
-							<div class="col-2">200.000</div>
-							<div class="col-2">200.000</div>
+							<div class="col-4">{{cart.ten_san_pham}}</div>
+							<div class="col-2">{{cart.soLuong}}</div>
+							<div class="col-2">{{cart.gia_ban.toLocaleString('vi-VN')}}</div>
+							<div class="col-2">{{(cart.soLuong * cart.gia_ban).toLocaleString('vi-VN')}}</div>
 						</div>
-						<div class="row pt-4">
-							<div class="col-2">
-								<img src="https://sweetiehouse.vn/wp-content/uploads/2020/08/27c6c506b207a1fdee0f61a4d8a0eb38.jpg" alt="" width="100">
-							</div>
-							<div class="col-4">Khô gà</div>
-							<div class="col-2">2</div>
-							<div class="col-2">200.000</div>
-							<div class="col-2">200.000</div>
-						</div>
-						<div class="row pt-4">
-							<div class="col-2">
-								<img src="https://sweetiehouse.vn/wp-content/uploads/2020/08/27c6c506b207a1fdee0f61a4d8a0eb38.jpg" alt="" width="100">
-							</div>
-							<div class="col-4">Khô gà</div>
-							<div class="col-2">2</div>
-							<div class="col-2">200.000</div>
-							<div class="col-2">200.000</div>
-						</div>
-
-
-
 
 
 					</div>
@@ -156,13 +135,13 @@
 						</div>
 					</div>
 				</div>
+			</div>
+
+			<footer class="bg-danger text-center text-lg-start mt-3">
+				<!-- Copyright -->
+				<div class="text-center text-white p-3" >
+					© 2022 Bản quyền thuộc:
+					<a class="text-white" href="https://tqkpro.net">Trần Quang Khiêm </a>
 				</div>
-				
-				<footer class="bg-danger text-center text-lg-start mt-3">
-					<!-- Copyright -->
-					<div class="text-center text-white p-3" >
-						© 2020 Copyright:
-						<a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-					</div>
-					<!-- Copyright -->
-				</footer>
+				<!-- Copyright -->
+			</footer>

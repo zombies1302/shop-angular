@@ -10,6 +10,7 @@ import { HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { SanPhamComponent } from './san-pham/san-pham.component';
 import { CartComponent } from './cart/cart.component';
+import { ListSanphamComponent } from './list-sanpham/list-sanpham.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CartComponent } from './cart/cart.component';
     LoaiComponent,
     SanPhamComponent,
     CartComponent,
+    ListSanphamComponent,
   ],
   imports: [
     BrowserModule,

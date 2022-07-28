@@ -1,0 +1,90 @@
+<div class="container text-center">
+  <img routerLink="/" src="https://f48-zpg-r.zdn.vn/9026594281339455888/25c26e0a6b70a92ef061.jpg" width="20%" height="30%" alt="">
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark  bg-danger sticky-top">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+      <!-- Left links -->
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" aria-current="page" href="#"><i class="fas fa-home"></i> Trang Chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#" routerLink="/sanpham"><i class="fas fa-bars"></i> Sản Phẩm</a>
+        </li>
+
+        <!-- Navbar dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"varia-expanded="false"><i class="fas fa-list"></i> Loại Sản Phẩm</a>
+          <!-- Dropdown menu -->
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+            <li *ngFor="let loai of listLoai">
+              <a class="dropdown-item" href="#">{{loai.tenLoai}}</a>
+            </li>
+
+          </ul>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-phone"></i> Liên Hệ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/admin/"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</a>
+        </li>
+        <!-- cart -->
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/cart" id="cart" >
+            <span><i class="fas fa-shopping-cart"></i> 
+              <span class="badge rounded-pill badge-notification bg-info">2</span>  Giỏ Hàng</span>
+            </a>
+            <!-- cart -->
+          </ul>
+          <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <div class="container pt-2">
+      
+      <h1 class="pt-2 text-center">Tất cả sản phẩm</h1>
+      <hr>
+      <div class="row" >
+        <div *ngFor="let sp of listSanPham" class="col-sm-6 col-lg-3 mb-4">
+          <div class="card border border-danger shadow-0 " >
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="{{sp.images}}" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{sp.ten_san_pham}}</h5>
+              <p class=" text-danger">
+                Giá: {{sp.gia_ban.toLocaleString('vi-VN')}}
+              </p>
+              <p>
+                {{sp.mo_ta}}
+              </p>
+              <button type="button" class="btn btn-outline-danger btn-rounded" (click)="addToCart(sp)">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-danger text-center text-lg-start mt-3">
+      <!-- Copyright -->
+      <div class="text-center text-white p-3" >
+        © 2022 Bản quyền thuộc:
+        <a class="text-white" href="https://tqkpro.net">Trần Quang Khiêm </a>
+      </div>
+      <!-- Copyright -->
+    </footer>

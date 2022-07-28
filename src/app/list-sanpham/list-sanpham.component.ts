@@ -2,22 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { DuLieuService } from '../du-lieu.service';
 import { Cart } from '../Cart';
 
-
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-list-sanpham',
+  templateUrl: './list-sanpham.component.html',
+  styleUrls: ['./list-sanpham.component.css']
 })
+export class ListSanphamComponent implements OnInit {
 
-export class HomeComponent implements OnInit {
   constructor(private d:DuLieuService) { }
   listLoai:any;
   listSanPham:any;
   listCart:any;
-
-  // items = [];
-
 
   ngOnInit(): void {
     this.listLoai = this.d.getLoai().subscribe ( 
@@ -29,8 +24,6 @@ export class HomeComponent implements OnInit {
 
     this.listCart = JSON.parse(this.d.getItem() || '')
 
-    // console.log()
-
   }
   addToCart(item: any) {
     let items = this.d.getItem();
@@ -38,6 +31,7 @@ export class HomeComponent implements OnInit {
     if (items == null) {
       item.soLuong = 1;
       this.d.AddItiem(item)
+      alert("Thêm Vào Giỏ Hàng Thành Công!")
 
     } else {
       var a: any = [];
@@ -50,37 +44,10 @@ export class HomeComponent implements OnInit {
         a[index].soLuong++;
       }
       localStorage.setItem('cart_items', JSON.stringify(a));
+      alert("Thêm Vào Giỏ Hàng Thành Công!")
+      
     }
 
   }
-//   addToCart(item:any){
-//     let items = this.d.getItem();
-//     if(items == null){
-//       item.soLuong = 1;
-//       this.d.AddItiem(item)
-//       console.log(this.d.getItem())
 
-//     }else{
-//       var a:any = [];
-//       a = JSON.parse(items) || [];
-//       console.log(item['id_sp'])
-//       // console.log(items[])
-//       a.find((data:any,index:number)=>{
-//         if(item['id_sp'] == data.id_sp){
-//           var sl = data.soLuong;
-//           sl++
-//           item.soLuong = sl
-//           a.splice(index,1)
-//           a.push(item)
-//           localStorage.setItem('cart_items', JSON.stringify(a));
-//         }else{
-//           item.soLuong = 1;
-//           a.push(item)
-//           // console.log(a)
-//           localStorage.setItem('cart_items', JSON.stringify(a));
-
-//         }
-// })}    }
-
-
-  }
+}

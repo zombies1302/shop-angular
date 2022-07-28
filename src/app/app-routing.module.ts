@@ -5,12 +5,15 @@ import { AdminComponent } from './admin/admin.component';
 import { LoaiComponent } from './loai/loai.component';
 import { SanPhamComponent } from './san-pham/san-pham.component';
 import { CartComponent } from './cart/cart.component';
+import { ListSanphamComponent } from './list-sanpham/list-sanpham.component';
+
 
 
 
 
 const routes: Routes = [
 {path:'',component:HomeComponent},
+{path:'sanpham',component:ListSanphamComponent},
 {path:'admin',component:AdminComponent},
 {path:'admin/loai',component:LoaiComponent},
 {path:'admin/sanpham',component:SanPhamComponent},

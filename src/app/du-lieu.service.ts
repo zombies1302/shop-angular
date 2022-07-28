@@ -23,7 +23,7 @@ export class DuLieuService {
   getSanPham(){
     return this.h.get('https://nodekhiem.herokuapp.com/api/sanpham');
   }
-  AddItiem(item:Cart){
+  AddItiem(item:any){
     let existingItems = localStorage.getItem('cart_items')
     // item:Cart['so_luong'] = '2';
     localStorage.setItem('cart_items', JSON.stringify([item]));
