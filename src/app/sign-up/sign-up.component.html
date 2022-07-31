@@ -1,0 +1,130 @@
+<div class="container text-center">
+	<img routerLink="/" src="https://f48-zpg-r.zdn.vn/9026594281339455888/25c26e0a6b70a92ef061.jpg" width="20%" height="30%" alt="">
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark  bg-danger sticky-top">
+	<!-- Container wrapper -->
+	<div class="container-fluid">
+		<!-- Toggle button -->
+		<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+			<i class="fas fa-bars"></i>
+		</button>
+
+		<!-- Collapsible wrapper -->
+		<div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+			<!-- Left links -->
+			<ul class="navbar-nav mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/" aria-current="page" href="#"><i class="fas fa-home"></i> Trang Chủ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="#" routerLink="/sanpham"><i class="fas fa-bars"></i> Sản Phẩm</a>
+				</li>
+
+				<!-- Navbar dropdown -->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"varia-expanded="false"><i class="fas fa-list"></i> Loại Sản Phẩm</a>
+					<!-- Dropdown menu -->
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+						<li *ngFor="let loai of listLoai">
+							<a class="dropdown-item" href="#">{{loai.tenLoai}}</a>
+						</li>
+
+					</ul>
+
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"><i class="fas fa-phone"></i> Liên Hệ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="#" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</a>
+				</li>
+				<!-- cart -->
+				<li class="nav-item">
+					<a class="nav-link" href="#" routerLink="/cart" id="cart" >
+						<span><i class="fas fa-shopping-cart"></i> 
+							<span class="badge rounded-pill badge-notification bg-info">{{listCart.length}}</span>  Giỏ Hàng</span>
+						</a>
+						<!-- cart -->
+					</ul>
+					<!-- Left links -->
+				</div>
+				<!-- Collapsible wrapper -->
+			</div>
+			<!-- Container wrapper -->
+		</nav>
+		<section class="vh-100" >
+			<div class="container py-5 h-100">
+				<div class="row d-flex justify-content-center align-items-center h-100">
+					<div class="col col-xl-10">
+						<div class="card" style="border-radius: 1rem;">
+							<div class="row g-0">
+								<div class="col-md-12 col-lg-12 d-flex align-items-center">
+									<div class="card-body p-4 p-lg-5 text-black">
+										<form>
+											<div class="d-flex align-items-center mb-3 pb-1">
+												<i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+												<span class="h1 fw-bold mb-0">PolyFood</span>
+											</div>
+											<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Đăng Ký Tài Khoản </h5>
+											<div class="row">
+												<div class="col-6">
+													<div class=" mb-4">
+														<label class="form-label" for="form2Example17">Họ và Tên<sup>*</sup></label>
+														<input type="text" id="form2Example17" class="form-control form-control-lg" />
+													</div>
+												</div>
+												<div class="col-6">
+													<div class=" mb-4">
+														<label class="form-label" for="form2Example27">Số Điện Thoại<sup>*</sup></label>
+
+														<input type="number" id="form2Example27" class="form-control form-control-lg" />
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-12">
+													<div class=" mb-4">
+														<label class="form-label" for="form2Example17">Địa chỉ email<sup>*</sup></label>
+														<input type="email" id="form2Example17" class="form-control form-control-lg" />
+													</div>
+												</div>
+												<div class="col-12">
+													<div class=" mb-4">
+														<label class="form-label" for="form2Example27">Mật Khẩu<sup>*</sup></label>
+
+														<input type="password" id="form2Example27" class="form-control form-control-lg" />
+													</div>
+												</div>
+											</div>
+											<div class=" mb-4">
+												<label class="form-label" for="form7Example4">Địa Chỉ<sup>*</sup></label>
+												<input type="text" id="form7Example4" class="form-control form-control-lg" />
+											</div>
+
+
+											<div class="pt-1 mb-4">
+												<button class="btn btn-primary btn-lg btn-block" type="button"><i class="fas fa-user-plus"></i> Đăng Ký</button>
+											</div>
+
+											<p class="mb-5 pb-lg-2" style="color: #393f81;">Đã có tài khoản? <a href="#!"
+												style="color: #393f81;" routerLink="/login">Đăng nhập tại đây</a></p>
+											</form>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<footer class="bg-danger text-center text-lg-start mt-3">
+				<!-- Copyright -->
+				<div class="text-center text-white p-3" >
+					© 2022 Bản quyền thuộc:
+					<a class="text-white" href="https://tqkpro.net">Trần Quang Khiêm </a>
+				</div>
+				<!-- Copyright -->
+			</footer>

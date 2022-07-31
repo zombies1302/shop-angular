@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
   constructor(private d:DuLieuService,private router:Router) { }
   listLoai:any;
   listCart:any;
-  total:any;
+
   thanhtien:number = 0
   
   ngOnInit(): void {

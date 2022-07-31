@@ -7,6 +7,11 @@ import { SanPhamComponent } from './san-pham/san-pham.component';
 import { CartComponent } from './cart/cart.component';
 import { ListSanphamComponent } from './list-sanpham/list-sanpham.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { OrderComponent } from './order/order.component';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+
+
 
 
 
@@ -20,6 +25,10 @@ const routes: Routes = [
 {path:'admin/loai',component:LoaiComponent},
 {path:'admin/sanpham',component:SanPhamComponent},
 {path:'cart',component:CartComponent},
+{path:'admin/order',component:OrderComponent},
+{path:'login',component:LoginComponent},
+{path:'signup',component:SignUpComponent},
+
 { path: '**', component: NotfoundComponent }
 
 

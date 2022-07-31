@@ -14,6 +14,9 @@ import { SanPhamComponent } from './san-pham/san-pham.component';
 import { CartComponent } from './cart/cart.component';
 import { ListSanphamComponent } from './list-sanpham/list-sanpham.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { OrderComponent } from './order/order.component';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { NotfoundComponent } from './notfound/notfound.component';
     CartComponent,
     ListSanphamComponent,
     NotfoundComponent,
+    OrderComponent,
+    LoginComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,9 @@
 					<li class="nav-item">
 						<a class="nav-link" routerLink="/admin/order">Đơn Hàng</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" routerLink="/admin/order">Đăng Xuất</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -57,14 +60,14 @@
 			</tr>
 		</thead>
 		<tbody>
-				<tr *ngFor="let da of listLoai">
-					<th scope="row">{{da.id_loai}}</th>
-					<td>{{da.tenLoai}}</td>
-					<td><button class="btn btn-info"><i class="fas fa-edit"></i></button>
-						<button class="btn btn-danger">X</button></td>
-					</tr>
-				</tbody>
-			</table>
+			<tr *ngFor="let da of listLoai">
+				<th scope="row">{{da.id_loai}}</th>
+				<td>{{da.tenLoai}}</td>
+				<td><button class="btn btn-info"><i class="fas fa-edit"></i></button>
+					<button class="btn btn-danger">X</button></td>
+				</tr>
+			</tbody>
+		</table>
 
 
-		</div>
+	</div>

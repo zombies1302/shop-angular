@@ -17,7 +17,7 @@
           <a class="nav-link" routerLink="/" aria-current="page" href="#"><i class="fas fa-home"></i> Trang Chủ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#" routerLink="/sanpham"><i class="fas fa-bars"></i> Sản Phẩm</a>
+          <a class="nav-link " href="#" routerLink="/sanpham"><i class="fas fa-bars"></i> Sản Phẩm</a>
         </li>
 
         <!-- Navbar dropdown -->
@@ -36,7 +36,7 @@
           <a class="nav-link" href="#"><i class="fas fa-phone"></i> Liên Hệ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</a>
+          <a class="nav-link active" href="#" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</a>
         </li>
         <!-- cart -->
         <li class="nav-item">
@@ -52,33 +52,50 @@
       </div>
       <!-- Container wrapper -->
     </nav>
-    <div class="container pt-2">
-      
-      <h1 class="pt-2 text-center">Tất cả sản phẩm</h1>
-      <hr>
-      <div class="row" >
-        <div *ngFor="let sp of listSanPham" class="col-sm-6 col-lg-3 mb-4">
-          <div class="card border border-danger shadow-0 " >
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="{{sp.images}}" class="img-fluid" />
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-              </a>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">{{sp.ten_san_pham}}</h5>
-              <p class=" text-danger">
-                Giá: {{sp.gia_ban.toLocaleString('vi-VN')}}
-              </p>
-              <p>
-                {{sp.mo_ta}}
-              </p>
-              <button type="button" class="btn btn-outline-danger btn-rounded" (click)="addToCart(sp)">Thêm vào giỏ hàng</button>
+<section class="vh-100" >
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-12 col-lg-12 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+                <form>
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                    <span class="h1 fw-bold mb-0">PolyFood</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Đăng Nhập Vào Tài Khoản</h5>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Địa chỉ email</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Mật Khẩu</label>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button class="btn btn-dark btn-lg btn-block" type="button"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</button>
+                  </div>
+
+                  <a class="small text-muted" href="#!">Quên Mật Khẩu ?</a>
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Chưa có tài khoản? <a href="#!"
+                      style="color: #393f81;" routerLink="/signup">Đăng ký tại đây</a></p>
+                </form>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
 
     <footer class="bg-danger text-center text-lg-start mt-3">
       <!-- Copyright -->
