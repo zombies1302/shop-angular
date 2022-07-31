@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BaoveGuard } from './baove.guard';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoaiComponent } from './loai/loai.component';
@@ -21,11 +22,11 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 const routes: Routes = [
 {path:'',component:HomeComponent},
 {path:'sanpham',component:ListSanphamComponent},
-{path:'admin',component:AdminComponent},
-{path:'admin/loai',component:LoaiComponent},
-{path:'admin/sanpham',component:SanPhamComponent},
+{path:'admin',component:AdminComponent,canActivate:[BaoveGuard]},
+{path:'admin/loai',component:LoaiComponent,canActivate:[BaoveGuard]},
+{path:'admin/sanpham',component:SanPhamComponent,canActivate:[BaoveGuard]},
 {path:'cart',component:CartComponent},
-{path:'admin/order',component:OrderComponent},
+{path:'admin/order',component:OrderComponent,canActivate:[BaoveGuard]},
 {path:'login',component:LoginComponent},
 {path:'signup',component:SignUpComponent},
 

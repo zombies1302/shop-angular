@@ -19,5 +19,10 @@ export class SignUpComponent implements OnInit {
     this.listCart = JSON.parse(this.d.getItem() || '')
     
   }
+  signup(data:any){
+    console.log(data)
+    this.d.signUp(data).subscribe ( data => alert('Đăng Ký thành công'));
+
+  }
 
 }

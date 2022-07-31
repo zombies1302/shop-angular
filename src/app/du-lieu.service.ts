@@ -4,19 +4,22 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DuLieuService {
-
+  host:string = "https://nodekhiem.herokuapp.com/"
   constructor(private h:HttpClient) { }
   AddLoai(data:any){
-    return this.h.post('https://nodekhiem.herokuapp.com/api/loai',data);
+    return this.h.post(`${this.host}loai`,data);
   }
   getLoai(){
-    return this.h.get('https://nodekhiem.herokuapp.com/api/loai');
+    return this.h.get(`${this.host}api/loai`);
   }
   AddSanPham(data:any){
-    return this.h.post('https://nodekhiem.herokuapp.com/api/sanpham',data);
+    return this.h.post(`${this.host}api/sanpham`,data);
   }
   getSanPham(){
-    return this.h.get('https://nodekhiem.herokuapp.com/api/sanpham');
+    return this.h.get(`${this.host}api/sanpham`);
+  }
+  signUp(data:any){
+    return this.h.post(`http://localhost:3000/api/signup`,data)
   }
   AddItiem(item:any){
     let existingItems = localStorage.getItem('cart_items')

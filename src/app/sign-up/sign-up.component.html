@@ -60,7 +60,7 @@
 							<div class="row g-0">
 								<div class="col-md-12 col-lg-12 d-flex align-items-center">
 									<div class="card-body p-4 p-lg-5 text-black">
-										<form>
+										<form #frmsignup="ngForm" (ngSubmit)="signup(frmsignup.value)">
 											<div class="d-flex align-items-center mb-3 pb-1">
 												<i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
 												<span class="h1 fw-bold mb-0">PolyFood</span>
@@ -69,16 +69,16 @@
 											<div class="row">
 												<div class="col-6">
 													<div class="form-outline mb-4">
-														<input type="text" id="form2Example17" class="form-control form-control-lg border rounded-5" />
-														<label class="form-label" for="form2Example17">Họ và Tên<sup>*</sup></label>
+														<input ngModel name="hoten" type="text" id="hoten" class="form-control form-control-lg border rounded-5" />
+														<label class="form-label" for="hoten">Họ và Tên<sup>*</sup></label>
 
 													</div>
 												</div>
 												<div class="col-6">
 													<div class="form-outline mb-4">
 
-														<input type="number" id="form2Example27" class="form-control form-control-lg border rounded-5" />
-														<label class="form-label" for="form2Example27">Số Điện Thoại<sup>*</sup></label>
+														<input ngModel name="phone" type="number" id="sdt" class="form-control form-control-lg border rounded-5" />
+														<label class="form-label" for="sdt">Số Điện Thoại<sup>*</sup></label>
 
 													</div>
 												</div>
@@ -86,29 +86,29 @@
 											<div class="row">
 												<div class="col-12">
 													<div class="form-outline mb-4">
-														<input type="email" id="form2Example17" class="form-control form-control-lg border rounded-5" />
-														<label class="form-label" for="form2Example17">Địa chỉ email<sup>*</sup></label>
+														<input ngModel name="email" type="email" id="email" class="form-control form-control-lg border rounded-5" />
+														<label class="form-label" for="email">Địa chỉ email<sup>*</sup></label>
 
 													</div>
 												</div>
 												<div class="col-12">
 													<div class="form-outline mb-4">
 
-														<input type="password" id="form2Example27" class="form-control form-control-lg border rounded-5" />
-														<label class="form-label" for="form2Example27">Mật Khẩu<sup>*</sup></label>
+														<input ngModel name="password" type="password" id="pass" class="form-control form-control-lg border rounded-5" />
+														<label class="form-label" for="pass">Mật Khẩu<sup>*</sup></label>
 
 													</div>
 												</div>
 											</div>
 											<div class="form-outline mb-4">
-												<input type="text" id="form7Example4" class="form-control form-control-lg border rounded-5" />
+												<input ngModel name="address" type="text" id="form7Example4" class="form-control form-control-lg border rounded-5" />
 												<label class="form-label" for="form7Example4">Địa Chỉ<sup>*</sup></label>
 
 											</div>
 
 
 											<div class="pt-1 mb-4">
-												<button class="btn btn-primary btn-lg btn-block" type="button"><i class="fas fa-user-plus"></i> Đăng Ký</button>
+												<button class="btn btn-primary btn-lg btn-block" type="submit"><i class="fas fa-user-plus"></i> Đăng Ký</button>
 											</div>
 
 											<p class="mb-5 pb-lg-2" style="color: #393f81;">Đã có tài khoản? <a href="#!"
