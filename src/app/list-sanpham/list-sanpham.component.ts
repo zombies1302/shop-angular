@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DuLieuService } from '../du-lieu.service';
-import { Cart } from '../Cart';
 
 @Component({
   selector: 'app-list-sanpham',
@@ -12,7 +11,7 @@ export class ListSanphamComponent implements OnInit {
   constructor(private d:DuLieuService) { }
   listLoai:any;
   listSanPham:any;
-  listCart:any;
+  listCart:any = 0;
 
   ngOnInit(): void {
     this.listLoai = this.d.getLoai().subscribe ( 
@@ -31,7 +30,8 @@ export class ListSanphamComponent implements OnInit {
     if (items == null) {
       item.soLuong = 1;
       this.d.AddItiem(item)
-      alert("Thêm Vào Giỏ Hàng Thành Công!")
+
+
 
     } else {
       var a: any = [];
@@ -40,12 +40,14 @@ export class ListSanphamComponent implements OnInit {
       if (index == -1) {
         item.soLuong = 1;
         a.push(item);
+        this.listCart.length++
+        
       } else {
         a[index].soLuong++;
       }
       localStorage.setItem('cart_items', JSON.stringify(a));
       alert("Thêm Vào Giỏ Hàng Thành Công!")
-      
+
     }
 
   }

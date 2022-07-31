@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DuLieuService } from '../du-lieu.service';
-import { Cart } from '../Cart';
-
 
 
 @Component({
@@ -14,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private d:DuLieuService) { }
   listLoai:any;
   listSanPham:any;
-  listCart:any;
+  listCart:any = 1;
 
   // items = [];
 
@@ -39,6 +37,9 @@ export class HomeComponent implements OnInit {
       item.soLuong = 1;
       this.d.AddItiem(item)
 
+
+
+
     } else {
       var a: any = [];
       a = JSON.parse(items) || [];
@@ -46,41 +47,15 @@ export class HomeComponent implements OnInit {
       if (index == -1) {
         item.soLuong = 1;
         a.push(item);
+        this.listCart.length++
+
       } else {
         a[index].soLuong++;
       }
       localStorage.setItem('cart_items', JSON.stringify(a));
+      alert("Thêm Vào Giỏ Hàng Thành Công!")
+
     }
 
   }
-//   addToCart(item:any){
-//     let items = this.d.getItem();
-//     if(items == null){
-//       item.soLuong = 1;
-//       this.d.AddItiem(item)
-//       console.log(this.d.getItem())
-
-//     }else{
-//       var a:any = [];
-//       a = JSON.parse(items) || [];
-//       console.log(item['id_sp'])
-//       // console.log(items[])
-//       a.find((data:any,index:number)=>{
-//         if(item['id_sp'] == data.id_sp){
-//           var sl = data.soLuong;
-//           sl++
-//           item.soLuong = sl
-//           a.splice(index,1)
-//           a.push(item)
-//           localStorage.setItem('cart_items', JSON.stringify(a));
-//         }else{
-//           item.soLuong = 1;
-//           a.push(item)
-//           // console.log(a)
-//           localStorage.setItem('cart_items', JSON.stringify(a));
-
-//         }
-// })}    }
-
-
-  }
+            }

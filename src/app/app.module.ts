@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -11,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import { SanPhamComponent } from './san-pham/san-pham.component';
 import { CartComponent } from './cart/cart.component';
 import { ListSanphamComponent } from './list-sanpham/list-sanpham.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { ListSanphamComponent } from './list-sanpham/list-sanpham.component';
     SanPhamComponent,
     CartComponent,
     ListSanphamComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

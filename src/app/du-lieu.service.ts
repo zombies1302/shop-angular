@@ -1,16 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cart,Carts } from './Cart';
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class DuLieuService {
 
   constructor(private h:HttpClient) { }
-  items = [];
-
   AddLoai(data:any){
     return this.h.post('https://nodekhiem.herokuapp.com/api/loai',data);
   }
@@ -27,7 +22,8 @@ export class DuLieuService {
     let existingItems = localStorage.getItem('cart_items')
     // item:Cart['so_luong'] = '2';
     localStorage.setItem('cart_items', JSON.stringify([item]));
-    console.log(existingItems)
+    alert("Thêm Vào Giỏ Hàng Thành Công!")
+
   }
   getItem(){
     return localStorage.getItem('cart_items')

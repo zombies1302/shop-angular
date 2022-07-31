@@ -10,14 +10,14 @@
 					<li class="nav-item">
 						<a class="nav-link " aria-current="page" routerLink="/admin/">Admin</a>
 					</li>
-					<li class="nav-item active">
-						<a class="nav-link" routerLink="/admin/sanpham">Sản Phẩm</a>
+					<li class="nav-item ">
+						<a class="nav-link active" routerLink="/admin/sanpham">Sản Phẩm</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" routerLink="/admin/loai">Loại Hàng</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link disabled">Disabled</a>
+						<a class="nav-link" routerLink="/admin/order">Đơn Hàng</a>
 					</li>
 				</ul>
 			</div>
@@ -95,20 +95,20 @@
 			</tr>
 		</thead>
 		<tbody>
-				<tr *ngFor="let da of listSanPham">
-					<th scope="row">{{da.id_sp}}</th>
-					<td>{{da.ten_san_pham}}</td>
-					<td>{{da.gia_nhap}}</td>
-					<td>{{da.gia_ban}}</td>
-					<td>{{da.ngay_them|date:'dd-MM-yyyy'}}</td>
+			<tr *ngFor="let da of listSanPham">
+				<th scope="row">{{da.id_sp}}</th>
+				<td>{{da.ten_san_pham}}</td>
+				<td>{{da.gia_nhap.toLocaleString('vi-VN')}}</td>
+				<td>{{da.gia_ban.toLocaleString('vi-VN')}}</td>
+				<td>{{da.ngay_them|date:'dd-MM-yyyy'}}</td>
 
 
 
-					<td><button class="btn btn-info"><i class="fas fa-edit"></i></button>
-						<button class="btn btn-danger">X</button></td>
-					</tr>
-				</tbody>
-			</table>
+				<td><button class="btn btn-info"><i class="fas fa-edit"></i></button>
+					<button class="btn btn-danger">X</button></td>
+				</tr>
+			</tbody>
+		</table>
 
 
-		</div>
+	</div>

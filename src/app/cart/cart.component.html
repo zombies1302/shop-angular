@@ -54,16 +54,16 @@
 		</nav>
 		<div class="container pt-2">
 			<h1 class="text-center mt-2">Giỏ hàng</h1>
-			<div class="row">
+			<div class="row shadow p-3">
 				<div class="col-7">
-					<div class="shadow p-2">
+					<div class=" p-2">
 						<h5>Giỏ hàng</h5>
 
 						<div class="row pt-4">
 							<div class="col-2">
 								Hình Ảnh
 							</div>
-							<div class="col-4">
+							<div class="col-2">
 								Tên Sản Phẩm
 							</div>
 							<div class="col-2">
@@ -75,26 +75,31 @@
 							<div class="col-2">
 								Thành Tiền
 							</div>
+							<div class="col-2">
+								Hành Động
+							</div>
 						</div>
 
 						<div *ngFor="let cart of listCart" class="row pt-4">
 							<div class="col-2">
 								<img src="{{cart.images}}" alt="" width="100">
 							</div>
-							<div class="col-4">{{cart.ten_san_pham}}</div>
+							<div class="col-2">{{cart.ten_san_pham}}</div>
 							<div class="col-2">{{cart.soLuong}}</div>
 							<div class="col-2">{{cart.gia_ban.toLocaleString('vi-VN')}}</div>
 							<div class="col-2">{{(cart.soLuong * cart.gia_ban).toLocaleString('vi-VN')}}</div>
+							<div class="col-2"> <button class="btn btn-danger" (click)="removeFromCart(cart.id_sp)"><i class="far fa-trash-alt"></i></button></div>
+
 						</div>
 
 
 					</div>
 				</div>
 				<div class="col-5">
-					<div class="shadow p-3">
+					<div class=" p-3">
 						<h5>Thông tin đơn hàng</h5>
 						<p class="p-3">Thành tiền sản phẩm: 
-							<span class="text-danger"><b>200.000 </b>vnđ </span>
+							<span class="text-danger"><b>{{thanhtien.toLocaleString('vi-VN')}} </b>vnđ </span>
 						</p>
 						<hr>
 						<div class="row">
@@ -113,7 +118,7 @@
 							</div>
 							<hr>
 							<p class="p-3"><b>Tổng Tiền:</b>
-								<span class="text-danger"><b>400.000 </b>vnđ </span>
+								<span class="text-danger"><b> {{thanhtien.toLocaleString('vi-VN')}} </b>vnđ </span>
 							</p>
 
 							<div class="p-3 text-center">
@@ -130,7 +135,7 @@
 								<span class="text-danger">Vui Lòng Đăng Nhập Để Tiến Hành Thanh Toán</span>
 							</div>
 							<div class="text-center p-2 pt-4">						
-								<a href="../tai-khoan" class="btn btn-primary">Đăng Nhập</a>
+								<a href="" class="btn btn-primary">Đăng Nhập</a>
 							</div>
 						</div>
 					</div>
