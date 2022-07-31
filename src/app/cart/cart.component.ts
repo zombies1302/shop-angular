@@ -21,12 +21,7 @@ export class CartComponent implements OnInit {
       data => this.listLoai= data
       );
     this.listCart = JSON.parse(this.d.getItem() || '')
-    this.total = this.listCart.forEach(
-      (data:any)=>{
-        this.thanhtien += (data.soLuong * data.gia_ban)
-        // console.log(this.thanhtien)
-        return this.thanhtien
-      })
+    this.thanhtien = this.listCart.reduce((acc: any, curr: any) => acc + curr.soLuong * curr.gia_ban, 0);
     // console.log(this.total)
 
   }
@@ -39,9 +34,15 @@ export class CartComponent implements OnInit {
       console.log(data)
     }
     localStorage.setItem('cart_items', JSON.stringify(data));
-    this.router.navigate(['/cart']);
-    console.log(this.total)
+    this.reloadCurrentRoute();
 
+
+  }
+  reloadCurrentRoute() {
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate([currentUrl]);
+    });
   }
 
 
