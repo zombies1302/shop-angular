@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DuLieuService } from '../du-lieu.service';
 import { FormControl } from '@angular/forms';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -8,7 +12,7 @@ import { FormControl } from '@angular/forms';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor(private d:DuLieuService) { }
+  constructor(private d:DuLieuService,private router:Router) { }
   listLoai:any;
   listCart:any = 0;
 
@@ -21,7 +25,9 @@ export class SignUpComponent implements OnInit {
   }
   signup(data:any){
     console.log(data)
-    this.d.signUp(data).subscribe ( data => alert('Đăng Ký thành công'));
+    this.d.signUp(data).subscribe ( (data) => {
+      Notify.success('Đăng ký thành công')
+      this.router.navigate(['/login']) });
 
   }
 

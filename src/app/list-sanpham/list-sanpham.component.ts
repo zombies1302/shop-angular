@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DuLieuService } from '../du-lieu.service';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
+
 
 @Component({
   selector: 'app-list-sanpham',
@@ -46,7 +49,10 @@ export class ListSanphamComponent implements OnInit {
         a[index].soLuong++;
       }
       localStorage.setItem('cart_items', JSON.stringify(a));
-      alert("Thêm Vào Giỏ Hàng Thành Công!")
+
+      Notify.success('Thêm vào giỏ hàng thành công');
+      // alert("Thêm Vào Giỏ Hàng Thành Công!")
+
 
     }
 

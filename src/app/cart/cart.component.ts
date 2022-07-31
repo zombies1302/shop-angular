@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DuLieuService } from '../du-lieu.service';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Router } from '@angular/router';
 
 
@@ -34,15 +35,12 @@ export class CartComponent implements OnInit {
       console.log(data)
     }
     localStorage.setItem('cart_items', JSON.stringify(data));
-    this.reloadCurrentRoute();
+    this.thanhtien = this.listCart.reduce((acc: any, curr: any) => acc + curr.soLuong * curr.gia_ban, 0);
 
 
-  }
-  reloadCurrentRoute() {
-    const currentUrl = this.router.url;
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-      this.router.navigate([currentUrl]);
-    });
+
+
+
   }
 
 

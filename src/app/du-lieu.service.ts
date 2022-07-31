@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +27,8 @@ export class DuLieuService {
     let existingItems = localStorage.getItem('cart_items')
     // item:Cart['so_luong'] = '2';
     localStorage.setItem('cart_items', JSON.stringify([item]));
-    alert("Thêm Vào Giỏ Hàng Thành Công!")
+    Notify.success('Thêm vào giỏ hàng thành công');
+
 
   }
   getItem(){
