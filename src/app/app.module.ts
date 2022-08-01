@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 
 
@@ -38,6 +39,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    Ng2GoogleChartsModule
+
 
     
   ],

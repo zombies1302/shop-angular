@@ -12,8 +12,8 @@ export class BaoveGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-    this.router.navigate(['/login']);   
-    return false;
+    // this.router.navigate(['/login']);   
+    return true;
   }
   
 }

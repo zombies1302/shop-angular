@@ -26,37 +26,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
     rel="stylesheet"
     />
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawVisualization);
-
-      function drawVisualization() {
-        // Some raw data (not necessarily accurate)
-        var data = google.visualization.arrayToDataTable([
-          ['Date', 'Khô gà', 'Trà Sữa Thái Đỏ', 'Khô Bò', 'Trà Sữa Thái Xanh'],
-          ['16/05/2022',  2,      4,         2,3],
-          ['17/05/2022',  5,      1,        5,5],
-          ['18/05/2022',  2,      6,        10,7],
-          ['20/05/2022',  1,      0,        6,6],
-          ['26/05/2022',  5,      4,         2,6],
-          ['27/05/2022',  5,      4,         2,6],
-          ['28/05/2022',  5,      4,         2,6],
-          ['29/05/2022',  5,      4,         2,6],
-          ]);
-        // console.log(data)
-        var options = {
-          title : 'Thống kê đơn đặt hàng',
-          vAxis: {title: 'Sô Đơn'},
-          hAxis: {title: 'Ngày'},
-          seriesType: 'bars',
-          series: {5: {type: 'line'}}
-        };
-
-        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
+  
   </head>
   <body>
     <app-root></app-root>

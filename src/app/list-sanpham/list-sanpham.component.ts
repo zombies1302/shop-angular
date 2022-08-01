@@ -3,7 +3,6 @@ import { DuLieuService } from '../du-lieu.service';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 
-
 @Component({
   selector: 'app-list-sanpham',
   templateUrl: './list-sanpham.component.html',
@@ -44,7 +43,7 @@ export class ListSanphamComponent implements OnInit {
         item.soLuong = 1;
         a.push(item);
         this.listCart.length++
-        
+
       } else {
         a[index].soLuong++;
       }
