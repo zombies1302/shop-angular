@@ -21,7 +21,7 @@ export class DuLieuService {
     return this.h.get(`${this.host}api/sanpham`);
   }
   signUp(data:any){
-    return this.h.post(`http://localhost:3000/api/signup`,data)
+    return this.h.post(`${this.host}api/signup`,data)
   }
   AddItiem(item:any){
     let existingItems = localStorage.getItem('cart_items')
